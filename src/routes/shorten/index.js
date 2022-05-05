@@ -31,7 +31,7 @@ export async function post({request}){
             url: body.url
         })
     })
-    // console.log(resp)
+    console.log(resp)
     if (resp.status != 200) {
         return{
             status: 500,

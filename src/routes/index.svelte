@@ -11,7 +11,7 @@
 	import Historical from '$lib/Historical.svelte';
 
 	var bntText = 'Shorten';
-	var url = 'https://google.com';
+	var url = '';
 
 	const [send, receive] = crossfade({
 		fallback(node, params) {
