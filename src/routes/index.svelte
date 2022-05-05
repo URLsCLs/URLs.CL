@@ -137,7 +137,7 @@
 		{/each}
 	{:else}
 		<shortener>
-			<input bind:value={url} type="url" />
+			<input placeholder="https://urls.cl/" bind:value={url} type="url" />
 			<button
 				on:mouseenter={() => {
 					bntText = 'Shrtn';
