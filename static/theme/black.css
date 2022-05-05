@@ -1,0 +1,13 @@
+:root {
+	--background: #000000;
+	--accent: rgba(39, 39, 39, 0.63);
+	--text: #4c566a;
+
+	--glow: #a3be8c;
+	--glow-accent: #8fbcbb;
+
+	--red: #bf616a;
+	--green: #a3be8c;
+	--yellow: #ebcb8b;
+	--purple: #b48ead;
+}
