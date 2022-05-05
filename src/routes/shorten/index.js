@@ -18,7 +18,7 @@ export async function post({request}){
             body: 'I am watching you...'
         }
     }
-
+    console.log(key)
     var resp = await fetch('https://api.urls.cl/slug',{
         method: 'POST',
         mode : 'no-cors',
