@@ -1,22 +1,21 @@
 <script>
-	import { onMount } from "svelte/internal";
+	import { onMount } from 'svelte/internal';
 
 	export let theme;
 
-
 	var themes = [
-		{name:'light', value: '#d8dee9' },
-		{name:'dark', value: '#2e3440' },
-		{name:'black', value: '#000000' }
-	]
+		{ name: 'light', value: '#d8dee9' },
+		{ name: 'dark', value: '#2e3440' },
+		{ name: 'black', value: '#000000' }
+	];
 
-	const themeSwitch = (value) =>{
-		theme = value
-		document.cookie=`theme=${value || 'dark'}`
-	}
-	onMount(()=>{
-		document.cookie=`theme=${theme || 'dark'}`
-	})
+	const themeSwitch = (value) => {
+		theme = value;
+		document.cookie = `theme=${value || 'dark'}`;
+	};
+	onMount(() => {
+		document.cookie = `theme=${theme || 'dark'}`;
+	});
 </script>
 
 <svelte:head>
@@ -24,15 +23,18 @@
 	<link rel="stylesheet" href={`/theme/${theme ? theme : 'dark'}.css`} />
 </svelte:head>
 
-
 <theme-switcher>
 	{#each themes as t}
-		<theme class:active={theme==t.name} on:click={()=>themeSwitch(t.name)} style="background-color:{t.value}"/>
+		<theme
+			class:active={theme == t.name}
+			on:click={() => themeSwitch(t.name)}
+			style="background-color:{t.value}"
+		/>
 	{/each}
 </theme-switcher>
 
 <style>
-	theme-switcher{
+	theme-switcher {
 		position: absolute;
 		right: 10px;
 		bottom: 15px;
@@ -41,7 +43,7 @@
 		grid-template: 'a b c';
 		z-index: 999;
 	}
-	theme{
+	theme {
 		display: block;
 		height: 15px;
 		width: 15px;
@@ -50,12 +52,11 @@
 		border: 2px solid rgba(255, 0, 0, 0);
 		cursor: pointer;
 	}
-	.active{
+	.active {
 		border: 2px solid rgb(131, 123, 123);
 	}
-	.active, theme:hover{
+	.active,
+	theme:hover {
 		transform: scale(1.4);
 	}
-
-
 </style>

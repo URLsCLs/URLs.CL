@@ -6,8 +6,8 @@
 	import { crossfade, fade } from 'svelte/transition';
 	import { onMount, tick } from 'svelte';
 
-	import TrashCan from "carbon-icons-svelte/lib/TrashCan.svelte";
-	import CopyFile from "carbon-icons-svelte/lib/CopyFile.svelte";
+	import TrashCan from 'carbon-icons-svelte/lib/TrashCan.svelte';
+	import CopyFile from 'carbon-icons-svelte/lib/CopyFile.svelte';
 	import Historical from '$lib/Historical.svelte';
 
 	var bntText = 'Shorten';
@@ -30,9 +30,8 @@
 		}
 	});
 
-
 	var newShort = async () => {
-		await tick()
+		await tick();
 		var id = $history.length + 1;
 		var shrt = {
 			id: id++,
@@ -57,8 +56,12 @@
 				url
 			)
 		) {
-			url = ''
-			alert.set({ message: 'Support is Currently Not there -- feel free to make a pull request if I missed something', status: 2  });
+			url = '';
+			alert.set({
+				message:
+					'Support is Currently Not there -- feel free to make a pull request if I missed something',
+				status: 2
+			});
 			return;
 		}
 
@@ -68,18 +71,16 @@
 			return;
 		}
 
-
 		let resp = await fetch('/shorten', {
 			method: 'POST',
-			body: JSON.stringify({url:url})
-		})
+			body: JSON.stringify({ url: url })
+		});
 
 		if (resp.status != 200) {
-			let error = await resp.json()
+			let error = await resp.json();
 			alert.set({ message: error.message, status: 3 });
-		
-		}else{
-			let slug = await resp.json()
+		} else {
+			let slug = await resp.json();
 			shrt.shrt = `urls.cl/${slug.slug}`;
 			shrt.slug = `${slug.slug}`;
 			shrt.url = slug.url;
@@ -121,7 +122,6 @@
 	{/each}
 </Historical>
 
-
 <shortainer out:fade in:fade>
 	{#if $history.find((s) => !s.hist)}
 		{#each $history.filter((s) => !s.hist) as shrt (shrt.id)}
@@ -153,14 +153,11 @@
 	{/if}
 </shortainer>
 
-
-
-
 <style>
 	shortener {
 		width: 100%;
 	}
-	
+
 	shortened {
 		display: block;
 		width: 100%;
@@ -218,7 +215,7 @@
 		float: right;
 		cursor: pointer;
 	}
-	
+
 	a {
 		display: block;
 		margin-bottom: 10px;
@@ -234,8 +231,8 @@
 		color: var(--red);
 		cursor: pointer;
 	}
-	copy, delete{
-
+	copy,
+	delete {
 		transition: 0.2s ease-in-out;
 	}
 	copy:hover {
@@ -245,9 +242,8 @@
 		color: var(--glow-accent);
 	}
 
-
 	@media screen and (max-width: 425px) {
-		shortainer{
+		shortainer {
 			width: 90%;
 			padding: 10px;
 		}

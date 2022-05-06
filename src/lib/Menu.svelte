@@ -31,7 +31,6 @@
 {/if}
 
 <style>
-
 	menu-bar {
 		display: flex;
 		flex-direction: column;
@@ -65,7 +64,8 @@
 		transition: 0.5s ease-in-out;
 	}
 
-	links a:hover:after, a.active:after {
+	links a:hover:after,
+	a.active:after {
 		top: 0;
 		left: -10px;
 		z-index: -1;
