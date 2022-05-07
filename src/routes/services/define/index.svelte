@@ -88,6 +88,12 @@
 
 		padding: 50px;
 	}
+	url{
+		z-index: -1;
+	}
+	input, button{
+		z-index: 999;
+	}
 
 	button {
 		font-weight: bold;
