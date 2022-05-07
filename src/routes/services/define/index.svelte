@@ -126,4 +126,20 @@
 	input:focus {
 		outline: unset;
 	}
+
+	@media screen and (max-width: 425px) {
+		url{
+			line-break: anywhere;
+    		width: 80%;
+			top: -90px;
+		}
+		preview-url {
+			width: 90%;
+		}
+
+		button {
+			width: 100%;
+			height: 35px;
+		}
+	}
 </style>
