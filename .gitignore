@@ -7,3 +7,4 @@ node_modules
 .env.*
 !.env.example
 _apikey.json
+src/lib/_apikey.json
