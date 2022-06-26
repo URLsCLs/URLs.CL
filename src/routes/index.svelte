@@ -126,7 +126,7 @@
 	{#if $history.find((s) => !s.hist)}
 		{#each $history.filter((s) => !s.hist) as shrt (shrt.id)}
 			<shortened out:send={{ key: shrt.id }}>
-				<a out:send={{ key: shrt.id }} href={shrt.shrt}>{shrt.shrt}</a>
+				<a out:send={{ key: shrt.id }} href="https://{shrt.shrt}">{shrt.shrt}</a>
 				<button
 					on:click={() => {
 						copy(shrt);
