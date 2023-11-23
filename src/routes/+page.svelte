@@ -80,7 +80,6 @@
 				required
 				type="text"
 				name="url"
-				value="https://google.com"
 				title="Url Shortner"
 				placeholder="https://urls.cl"
 			/>
