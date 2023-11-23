@@ -54,7 +54,7 @@
 </svelte:head>
 
 <div class="grid content-center h-full">
-	<div class="grid gap-10 w-1/2 mx-auto h-fit">
+	<div class="grid gap-10 w-3/4 lg:w-1/2 mx-auto h-fit">
 		<h1 class="font-bold text-5xl w-full text-center">URLs.CL</h1>
 		<form
 			class="flex flex-col gap-5"
