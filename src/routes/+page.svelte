@@ -16,12 +16,22 @@
 		}		
 	}
 
+	/**
+	 * @typedef {Object} 
+	 * @property {string} url
+	 * @property {string} slug
+	 */
 	let urls = [
 		
 	];
 
 	let btnTxt = 'SHORTEN';
 
+	/**
+	 * @param {string} text
+	 * @example
+	 * copyToClipboard('Hello World'); // 'Hello World' copied to clipboard.
+	 */
 	const copyToClipboard = (text) => {
 		navigator.clipboard.writeText(text);
 		toastStore.trigger({
@@ -30,13 +40,16 @@
 		});
 	};
 
+	/**
+	 * @param {string} text
+	 * @example addToUriList('https://urls.cl'); // 'https://urls.cl' added to list.
+	 */
 	const addToUriList = (uri) => {
 		urls = [...urls, uri];
 		window.localStorage.setItem('urls', JSON.stringify(urls));
 	};
 
 	onMount(() => {
-		// remove the get parameter from the url if it exists
 		if (window.location.search) {
 			window.history.replaceState({}, document.title, '/');
 		}

@@ -17,6 +17,10 @@ if (!building) {
 }
 
 
+/**
+ * @description
+ * This is the database connection pool
+ */
 const pool = mysql.createPool({
 	host: SECRET_HOST,
 	user: SECRET_USER,
@@ -32,5 +36,8 @@ if(!building){
     dbExport = null
 }
 
-
+/**
+ * @description
+ * This is the database connection pool
+ */
 export const db = dbExport
