@@ -45,7 +45,7 @@
 	 * @example addToUriList('https://urls.cl'); // 'https://urls.cl' added to list.
 	 */
 	const addToUriList = (uri) => {
-		urls = [...urls, uri];
+		urls = [uri, ...urls];
 		window.localStorage.setItem('urls', JSON.stringify(urls));
 	};
 
@@ -85,6 +85,7 @@
 					let uri = result.data
 					addToUriList(uri);
 					copyToClipboard(`https://urls.cl/${uri.slug}`);
+					formElement.reset();
 				};
 			}}
 		>
